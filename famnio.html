@@ -149,9 +149,19 @@
     }
     footer strong { color: rgba(255,255,255,0.75); font-family: 'Fraunces', serif; }
 
+    /* HAMBURGER */
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: all 0.3s; }
+    .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: rgba(20,12,70,0.98); padding: 20px 24px; z-index: 99; flex-direction: column; gap: 16px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .mobile-menu a { color: var(--white-70); font-size: 16px; font-weight: 600; text-decoration: none; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu.open { display: flex; }
+
     @media (max-width: 768px) {
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
+      .btn-nav { display: none; }
+      .hamburger { display: flex; }
       .hero { padding: 70px 24px 60px; }
       .hero h1 { font-size: 36px; }
       .section, .section-alt { padding: 60px 24px; }
@@ -183,7 +193,25 @@
     <a href="#investori" style="color:#d4a8ff; font-weight:800;">Pro investory</a>
   </div>
   <a href="#registrace" style="text-decoration:none;"><button class="btn-nav">Registrovat se</button></a>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#proc" onclick="toggleMenu()">O projektu</a>
+  <a href="#funkce" onclick="toggleMenu()">Funkce</a>
+  <a href="#vize" onclick="toggleMenu()">Vize</a>
+  <a href="#zdravi" onclick="toggleMenu()">Zdraví & Výzkumy</a>
+  <a href="#investori" onclick="toggleMenu()" style="color:#d4a8ff; font-weight:800;">Pro investory</a>
+  <a href="#registrace" onclick="toggleMenu()" style="color:#fff; font-weight:800;">Registrovat se →</a>
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+</script>
 
 <div class="hero">
   <span class="hero-badge">Asistent pro váš domov</span>
