@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Famnio – Asistent pro váš domov</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple-dark: #1a1060;
+      --purple-mid: #2d1b8e;
+      --purple: #6b2fa0;
+      --purple-light: #9b3fc0;
+      --purple-accent: #d4a8ff;
+      --white: #ffffff;
+      --white-70: rgba(255,255,255,0.7);
+      --white-15: rgba(255,255,255,0.15);
+      --white-08: rgba(255,255,255,0.08);
+      --bg: #f8f7ff;
+      --bg-alt: #f0eefa;
+      --text: #1a1060;
+      --text-secondary: #5a5080;
+      --border: rgba(107,47,160,0.12);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--text); }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 40px;
+      background: rgba(20,12,70,0.97);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(12px);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; color: #fff; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 900; text-decoration: none; }
+    .nav-logo-icon { width: 36px; height: 36px; background: var(--white-15); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: var(--white-70); font-size: 14px; font-weight: 600; text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .btn-nav { background: linear-gradient(135deg, #7c5cbf, #5b4a9e); color: #fff; border: none; padding: 9px 22px; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; transition: opacity 0.2s; }
+    .btn-nav:hover { opacity: 0.9; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(160deg, var(--purple-dark) 0%, var(--purple-mid) 40%, var(--purple) 80%, var(--purple-light) 100%);
+      color: #fff; padding: 100px 40px 80px;
+      text-align: center; display: flex; flex-direction: column; align-items: center; gap: 28px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(212,168,255,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      background: var(--white-15); border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px; padding: 6px 18px; font-size: 13px; font-weight: 700;
+      color: rgba(255,255,255,0.9); letter-spacing: 0.5px;
+    }
+    .hero h1 { font-family: 'Fraunces', serif; font-size: 52px; font-weight: 900; line-height: 1.15; max-width: 680px; }
+    .hero h1 span { color: var(--purple-accent); }
+    .hero p { font-size: 18px; color: var(--white-70); max-width: 520px; line-height: 1.7; font-weight: 600; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .btn-primary { background: #fff; color: var(--purple-mid); border: none; padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 800; cursor: pointer; font-family: 'Nunito', sans-serif; transition: transform 0.15s; }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-secondary { background: var(--white-15); color: #fff; border: 1px solid rgba(255,255,255,0.3); padding: 14px 32px; border-radius: 12px; font-size: 16px; font-weight: 700; cursor: pointer; font-family: 'Nunito', sans-serif; transition: background 0.2s; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.2); }
+
+    /* SECTIONS */
+    .section { padding: 80px 40px; background: var(--bg); }
+    .section-alt { padding: 80px 40px; background: var(--bg-alt); }
+    .inner { max-width: 760px; margin: 0 auto; }
+    .label { font-size: 11px; font-weight: 800; color: var(--purple); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+    .section-title { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 900; color: var(--text); margin-bottom: 28px; line-height: 1.25; }
+    .section-title-center { font-family: 'Fraunces', serif; font-size: 32px; font-weight: 900; color: var(--text); text-align: center; margin-bottom: 10px; }
+    .section-sub { font-size: 16px; color: var(--text-secondary); text-align: center; margin-bottom: 44px; font-weight: 600; }
+
+    /* STORY */
+    .story-text p { font-size: 17px; color: var(--text-secondary); line-height: 1.9; margin-bottom: 22px; font-weight: 600; }
+    .story-text strong { color: var(--text); font-weight: 800; }
+    .quote-block {
+      border-left: 4px solid var(--purple); padding: 20px 28px; margin: 36px 0;
+      background: white; border-radius: 0 16px 16px 0;
+      box-shadow: 0 4px 24px rgba(107,47,160,0.08);
+    }
+    .quote-block p { font-family: 'Fraunces', serif; font-size: 20px; color: var(--text); line-height: 1.6; font-weight: 700; }
+    .author { font-size: 15px; color: var(--purple); font-weight: 800; margin-top: 28px; }
+
+    /* PROBLEMS */
+    .problems-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; }
+    .problem-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 22px; transition: box-shadow 0.2s; }
+    .problem-card:hover { box-shadow: 0 8px 32px rgba(107,47,160,0.12); }
+    .problem-icon { font-size: 32px; margin-bottom: 14px; }
+    .problem-card h3 { font-size: 16px; font-weight: 800; color: var(--text); margin-bottom: 10px; }
+    .problem-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; font-weight: 600; }
+
+    /* SOLUTION */
+    .solution {
+      background: linear-gradient(160deg, var(--purple-dark), var(--purple));
+      color: #fff; padding: 80px 40px; text-align: center;
+    }
+    .solution h2 { font-family: 'Fraunces', serif; font-size: 34px; font-weight: 900; margin-bottom: 18px; }
+    .solution > p { font-size: 17px; color: var(--white-70); max-width: 540px; margin: 0 auto 52px; line-height: 1.7; font-weight: 600; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 16px; max-width: 760px; margin: 0 auto 48px; }
+    .feature-card { background: var(--white-08); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); padding: 22px 16px; text-align: center; transition: background 0.2s; }
+    .feature-card:hover { background: rgba(255,255,255,0.12); }
+    .feature-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--white-15); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 22px; }
+    .feature-card h3 { font-size: 15px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .feature-card p { font-size: 13px; color: var(--white-70); line-height: 1.5; font-weight: 600; }
+
+    /* INTEGRATION BOX */
+    .integration-box {
+      background: var(--white-08); border: 1px solid rgba(255,255,255,0.18);
+      border-radius: var(--radius); padding: 32px 36px; max-width: 760px; margin: 0 auto;
+      text-align: left;
+    }
+    .integration-box h3 { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 900; color: #fff; margin-bottom: 10px; }
+    .integration-box p { font-size: 15px; color: var(--white-70); margin-bottom: 22px; line-height: 1.6; font-weight: 600; }
+    .integration-logos { display: flex; gap: 12px; flex-wrap: wrap; }
+    .integration-badge {
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px; padding: 10px 18px; font-size: 15px; font-weight: 800;
+      color: #fff; display: flex; align-items: center; gap: 8px;
+    }
+    .badge-dot { width: 8px; height: 8px; border-radius: 50%; background: #7dff9b; }
+
+    /* VISION */
+    .vision-text p { font-size: 17px; color: var(--text-secondary); line-height: 1.9; margin-bottom: 22px; font-weight: 600; }
+    .vision-quote { font-family: 'Fraunces', serif; font-size: 22px; color: var(--purple); font-weight: 900; margin-top: 12px; }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, var(--purple-mid), var(--purple));
+      padding: 80px 40px; text-align: center; color: #fff;
+    }
+    .cta h2 { font-family: 'Fraunces', serif; font-size: 36px; font-weight: 900; margin-bottom: 18px; }
+    .cta p { font-size: 17px; color: var(--white-70); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; font-weight: 600; }
+    .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* FOOTER */
+    footer {
+      background: #0a061f; color: rgba(255,255,255,0.4);
+      padding: 32px 40px; text-align: center; font-size: 14px; font-weight: 600;
+    }
+    footer strong { color: rgba(255,255,255,0.75); font-family: 'Fraunces', serif; }
+
+    @media (max-width: 768px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .hero { padding: 70px 24px 60px; }
+      .hero h1 { font-size: 36px; }
+      .section, .section-alt { padding: 60px 24px; }
+      .solution { padding: 60px 24px; }
+      .cta { padding: 60px 24px; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <circle cx="12" cy="7" r="3"/>
+        <path d="M6 20c0-4 2.7-7 6-7s6 3 6 7"/>
+        <path d="M3 14c0-2.5 1.5-4 3-4"/>
+        <path d="M21 14c0-2.5-1.5-4-3-4"/>
+      </svg>
+    </div>
+    FAMNIO
+  </a>
+  <div class="nav-links">
+    <a href="#proc">O projektu</a>
+    <a href="#funkce">Funkce</a>
+    <a href="#vize">Vize</a>
+    <a href="#zdravi">Zdraví & Výzkumy</a>
+    <a href="#investori">Pro investory</a>
+  </div>
+  <button class="btn-nav">Registrovat se</button>
+</nav>
+
+<div class="hero">
+  <span class="hero-badge">Asistent pro váš domov</span>
+  <h1>Domov by měl být <span>útočiště.</span> Ne každodenní boj.</h1>
+  <p>Famnio vzniká proto, abyste trávili méně času organizací a více času tím, na čem skutečně záleží.</p>
+  <div class="hero-btns">
+    <button class="btn-primary">Registrovat se zdarma</button>
+    <button class="btn-secondary">Zjistit více</button>
+  </div>
+</div>
+
+<div class="section" id="proc">
+  <div class="inner">
+    <p class="label">Proč Famnio vzniká</p>
+    <h2 class="section-title">Začalo to rozpísem služeb na dveřích.</h2>
+    <div class="story-text">
+      <p>Když jsem byl malý, viselo nám doma na dveřích plánování služeb. Kdo umyje nádobí, kdo vysype koš, kdo uklidí. Nechápal jsem to. Přišlo mi to jako zbytečná byrokracie.</p>
+      <p>Ale pak jsem vyrostl. A najednou jsem pochopil, proč ten rozpis existoval.</p>
+      <p><strong>Domácnost prostě nefunguje sama od sebe.</strong></p>
+      <p>Jenže problém není jen o povinnostech. To by bylo jednoduché. Problém je v tom, kolik věcí musíte mít najednou v hlavě. Co uvařit k obědu, když nevíte co je v ledničce. Jak naplánovat výlet, když nevíte co mají děti příští týden. Jak nekupovat potřetí hořčici, protože jste zapomněli že ji máte. Jak nezapomenout na prohlídku u zubaře, objednanou před třemi měsíci.</p>
+      <p>A k tomu ještě práce. Termíny. Schůzky. Únava.</p>
+      <p>Přijdete domů a místo odpočinku řešíte co je k večeři. Místo přítomnosti jste v hlavě pořád někde jinde.</p>
+      <div class="quote-block">
+        <p>"Domov by měl být útočiště. Místo kde se dobijete. Místo toho je to pro mnoho z nás další zdroj stresu — jen v jiném prostředí než v práci."</p>
+      </div>
+      <p>Mluvil jsem s desítkami lidí. Stejný příběh dokola. Každý bojuje se stejnými věcmi. Každý si myslí že je to jeho osobní selhání. Ale není. Je to systémový problém, který nikdo pořádně nevyřešil.</p>
+      <p>Proto Famnio vzniká. Ne jako další todo appka. Ale jako skutečný asistent pro váš domov — který šetří čas, stres a peníze. Ať jste pár, rodina s dětmi, nebo prostě chcete mít doma klid a pořádek.</p>
+      <p><strong>Protože čas strávený doma v klidu není luxus. Je to to nejdůležitější co máme.</strong></p>
+      <p class="author">— Michal Machálek, zakladatel Famnio</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-alt">
+  <div class="inner">
+    <p class="section-title-center">Problémy které Famnio řeší</p>
+    <p class="section-sub">Každý z nás to zná.</p>
+    <div class="problems-grid">
+      <div class="problem-card">
+        <div class="problem-icon">⏰</div>
+        <h3>Nedostatek času</h3>
+        <p>Práce, schůzky, povinnosti — a pak ještě plánovat co k večeři? Famnio to zvládne za vás.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">🧠</div>
+        <h3>Mentální přetížení</h3>
+        <p>Pamatovat si všechno za celou domácnost je vyčerpávající. AI asistent to přebírá za vás.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💛</div>
+        <h3>Ztracený čas doma</h3>
+        <p>Každá minuta strávená organizací je minuta, kterou jste nemohli trávit tím co máte rádi.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">💸</div>
+        <h3>Zbytečné výdaje</h3>
+        <p>Hladové nákupy, zdvojené položky, prošlé potraviny. Famnio šetří peníze automaticky.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="solution" id="funkce">
+  <h2>Jedno řešení pro celý váš domov</h2>
+  <p>Famnio propojuje vše co potřebujete. AI asistent zná každého člena domácnosti a pomáhá poloautomaticky — navrhuje, vy potvrzujete.</p>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📅</div>
+      <h3>Kalendář</h3>
+      <p>Události celé domácnosti na jednom místě</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✅</div>
+      <h3>Úkoly</h3>
+      <p>Gamifikace a body za splněné úkoly</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🍽️</div>
+      <h3>Jídelníček</h3>
+      <p>AI navrhne týdenní menu dle preferencí</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛒</div>
+      <h3>Nákupy</h3>
+      <p>Automatický seznam a přímá objednávka</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">❤️</div>
+      <h3>Zdraví</h3>
+      <p>Prohlídky, léky, očkování přehledně</p>
+    </div>
+  </div>
+  <div class="integration-box">
+    <h3>Nakupujte přímo z appky</h3>
+    <p>Famnio vygeneruje nákupní seznam z jídelníčku a vy ho jedním kliknutím odešlete přímo do Rohlíku nebo Košíku.cz. Žádné přepisování, žádné zapomínání.</p>
+    <div class="integration-logos">
+      <div class="integration-badge"><div class="badge-dot"></div> Rohlík</div>
+      <div class="integration-badge"><div class="badge-dot"></div> Košík.cz</div>
+    </div>
+  </div>
+</div>
+
+<div class="section" id="vize">
+  <div class="inner">
+    <p class="label">Vize do budoucna</p>
+    <h2 class="section-title">Famnio je začátek něčeho většího.</h2>
+    <div class="vision-text">
+      <p>Famnio není jen appka. Je to začátek většího projektu — pomoci stovkám domácností žít lépe, s méně stresem a více radostí každý den.</p>
+      <p>Jednáme o spolupráci s pojišťovnami jako distribučním kanálem. Prevence a zdravý životní styl má hodnotu nejen pro jednotlivce, ale i pro celý systém. V budoucnu plánujeme rozšíření do dětských heren a rodinného ubytování.</p>
+      <p>Protože domov není jen místo kde spíte. Je to základ všeho.</p>
+      <p class="vision-quote">"Svět zítřka přinášíme už dnes."</p>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>Připojte se jako první</h2>
+  <p>Famnio se připravuje. Zaregistrujte se nyní a buďte mezi prvními, kteří to změní.</p>
+  <div class="cta-btns">
+    <button class="btn-primary">Registrovat se zdarma</button>
+    <button class="btn-secondary">Zjistit více</button>
+  </div>
+</div>
+
+<footer>
+  <strong>FAMNIO</strong> &nbsp;·&nbsp; Svět zítřka přinášíme už dnes &nbsp;·&nbsp; © 2025 Michal Machálek
+</footer>
+
+</body>
+</html>
