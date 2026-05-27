@@ -106,13 +106,21 @@
 
 <div class="cta"><h2>Chcete být zdravější a méně ve stresu?</h2><p>Zaregistrujte se a buďte u spuštění Famnio.</p><a href="registrace.html" class="bp">Registrovat se zdarma</a></div>
 <footer><strong>FAMNIO</strong> &nbsp;·&nbsp; © 2026 Michal Machálek<div class="flinks"><a href="index.html">Domů</a><a href="funkce.html">Funkce</a><a href="zdravi.html">Zdraví</a><a href="faq.html">FAQ</a><a href="investori.html">Investoři</a><a href="registrace.html">Registrace</a></div></footer>
-<div class="cookie" id="cookie"><div class="cookie-text"><h4>🍪 Používáme cookies</h4><p>Pouze nezbytné cookies. Žádné sledovací ani reklamní.</p></div><div class="cookie-btns"><button class="cbtn1" onclick="hideCookie()">Odmítnout</button><button class="cbtn2" onclick="hideCookie()">Přijmout vše</button></div></div>
-<script>
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
-function hideCookie(){document.getElementById('cookie').style.display='none';}
-function fmt(n){if(n>=1e9)return(n/1e9).toFixed(1)+' mld. Kč';if(n>=1e6)return Math.round(n/1e6)+' mil. Kč';return Math.round(n).toLocaleString('cs-CZ')+' Kč';}
-function calc(){const u=parseInt(document.getElementById('ur').value);const p=parseInt(document.getElementById('pr').value);document.getElementById('uo').textContent=u.toLocaleString('cs-CZ');document.getElementById('po').textContent=p+' %';const sy=u*44000*(p/100);document.getElementById('s1').textContent=fmt(sy);document.getElementById('s3').textContent=fmt(sy*3);document.getElementById('su').textContent=fmt(44000*(p/100));}
-calc();
-</script>
+
+<div style="display:flex;flex-direction:column;gap:6px;"><div class="cookie-btns"><button class="cbtn1" onclick="declineCookies()">Odmítnout analytiku</button><button class="cbtn2" onclick="acceptCookies()">Přijmout vše</button></div><p style="font-size:10px;color:rgba(255,255,255,0.4);text-align:right;">Nezbytné cookies jsou vždy aktivní.</p></div></div>
+<div class="cookie" id="cookie">
+  <div class="cookie-text">
+    <h4>🍪 Používáme cookies</h4>
+    <p>Používáme nezbytné cookies pro fungování webu a analytické cookies (Google Analytics) pro zlepšování. Odmítnutím vypnete pouze analytiku — web funguje normálně.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;">
+    <div class="cookie-btns">
+      <button class="cbtn1" onclick="declineCookies()">Odmítnout analytiku</button>
+      <button class="cbtn2" onclick="acceptCookies()">Přijmout vše</button>
+    </div>
+    <p style="font-size:10px;color:rgba(255,255,255,0.4);text-align:right;">Nezbytné cookies jsou vždy aktivní.</p>
+  </div>
+</div>
+<script src="famnio.js"></script>
 </body>
 </html>

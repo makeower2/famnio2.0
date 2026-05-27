@@ -149,11 +149,10 @@
 </div>
 
 <footer><strong>FAMNIO</strong> &nbsp;·&nbsp; © 2026 Michal Machálek<div class="flinks"><a href="index.html">Domů</a><a href="funkce.html">Funkce</a><a href="zdravi.html">Zdraví</a><a href="faq.html">FAQ</a><a href="investori.html">Investoři</a><a href="registrace.html">Registrace</a></div></footer>
-<div class="cookie" id="cookie"><div class="cookie-text"><h4>🍪 Používáme cookies</h4><p>Pouze nezbytné cookies. Žádné sledovací ani reklamní.</p></div><div class="cookie-btns"><button class="cbtn1" onclick="hideCookie()">Odmítnout</button><button class="cbtn2" onclick="hideCookie()">Přijmout vše</button></div></div>
+
 
 <script>
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
-function hideCookie(){document.getElementById('cookie').style.display='none';}
+
 
 function vyberPlan(plan, el) {
   document.querySelectorAll('.plan-card').forEach(c => {
@@ -204,5 +203,20 @@ async function handleSubmit(e) {
   } catch(err) { form.submit(); }
 }
 </script>
+<div style="display:flex;flex-direction:column;gap:6px;"><div class="cookie-btns"><button class="cbtn1" onclick="declineCookies()">Odmítnout analytiku</button><button class="cbtn2" onclick="acceptCookies()">Přijmout vše</button></div><p style="font-size:10px;color:rgba(255,255,255,0.4);text-align:right;">Nezbytné cookies jsou vždy aktivní.</p></div></div>
+<div class="cookie" id="cookie">
+  <div class="cookie-text">
+    <h4>🍪 Používáme cookies</h4>
+    <p>Používáme nezbytné cookies pro fungování webu a analytické cookies (Google Analytics) pro zlepšování. Odmítnutím vypnete pouze analytiku — web funguje normálně.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:6px;">
+    <div class="cookie-btns">
+      <button class="cbtn1" onclick="declineCookies()">Odmítnout analytiku</button>
+      <button class="cbtn2" onclick="acceptCookies()">Přijmout vše</button>
+    </div>
+    <p style="font-size:10px;color:rgba(255,255,255,0.4);text-align:right;">Nezbytné cookies jsou vždy aktivní.</p>
+  </div>
+</div>
+<script src="famnio.js"></script>
 </body>
 </html>
