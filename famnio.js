@@ -3,7 +3,7 @@
 // =====================
 // GOOGLE ANALYTICS
 // =====================
-const GA_ID = 'G-5H8VPNXWDG';
+const GA_ID = 'G-E045N6HW9E';
 
 function loadGA() {
   if (window._gaLoaded) return;
