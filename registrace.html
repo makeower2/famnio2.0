@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registrace – Famnio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a class="nlogo" href="index.html"><div class="nicon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="7" r="3"/><path d="M6 20c0-4 2.7-7 6-7s6 3 6 7"/><path d="M3 14c0-2.5 1.5-4 3-4"/><path d="M21 14c0-2.5-1.5-4-3-4"/></svg></div>FAMNIO</a>
+  <div class="nlinks"><a href="index.html">Domů</a><a href="funkce.html">Funkce</a><a href="zdravi.html">Zdraví</a><a href="faq.html">FAQ</a><a href="investori.html">Investoři</a><a href="registrace.html" class="nav-reg active">Registrovat se</a></div>
+  <a href="registrace.html" class="nbtn" style="background:#7dff9b;color:#085041;">Registrovat se</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Domů</a><a href="funkce.html" onclick="toggleMenu()">Funkce</a><a href="zdravi.html" onclick="toggleMenu()">Zdraví</a><a href="faq.html" onclick="toggleMenu()">FAQ</a><a href="investori.html" onclick="toggleMenu()">Investoři</a><a href="registrace.html" onclick="toggleMenu()" class="nav-reg">Registrovat se →</a>
+</div>
+
+<div class="phero">
+  <h1>Vyberte si svůj plán</h1>
+  <p>Začněte 21 dní zdarma. Žádná platební karta. Zrušení kdykoliv.</p>
+  <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(240,165,0,0.2);border:1px solid #f0a500;border-radius:12px;padding:10px 18px;margin-top:18px;">
+    <span style="font-size:18px;">🎁</span>
+    <div style="text-align:left;">
+      <div style="font-size:13px;font-weight:800;color:#f0a500;">Předregistrační sleva!</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.85);font-weight:600;">Zaregistrujte se teď — <strong style="color:#fff;">předběžný přístup + sleva na první 3 měsíce</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div style="max-width:720px;margin:0 auto;">
+
+    <!-- VÝBĚR PLÁNU -->
+    <div id="planVyber">
+      <p style="font-size:14px;font-weight:800;color:var(--t);text-align:center;margin-bottom:18px;">Kliknutím vyberte plán:</p>
+      <div class="plan-grid">
+
+        <div class="plan-card" onclick="vyberPlan('trial',this)" id="card-trial">
+          <div class="ptag">ZKUŠEBNÍ VERZE</div>
+          <div class="pprice">Zdarma</div>
+          <div class="pdesc">21 dní, žádná karta</div>
+          <ul class="plist">
+            <li class="ok">Všechny funkce odemčeny</li>
+            <li class="ok">AI asistent plně dostupný</li>
+            <li class="ok">Max. 2 členové domácnosti</li>
+            <li class="ok">Žádná platební karta</li>
+          </ul>
+          <div class="pbtn-t">Začít zdarma →</div>
+        </div>
+
+        <div class="plan-card" onclick="vyberPlan('basic',this)" id="card-basic">
+          <div class="ptag">BASIC</div>
+          <div class="pprice">200 Kč<span style="font-size:13px;font-weight:600;color:var(--ts);">/měs</span></div>
+          <div class="pdiscount"><span>🎁 Teď jen 150 Kč / první 3 měsíce</span></div>
+          <div class="pdesc">Páry a menší domácnosti</div>
+          <ul class="plist">
+            <li class="ok">Max. 4 členové domácnosti</li>
+            <li class="ok">Všechny moduly + Rohlík</li>
+            <li class="ok">Push notifikace</li>
+            <li class="no">AI asistent</li>
+          </ul>
+          <div class="pbtn-p">Vybrat Basic →</div>
+        </div>
+
+        <div class="plan-card dark" onclick="vyberPlan('pro',this)" id="card-pro" style="position:relative;">
+          <span class="pbest">NEJLEPŠÍ VOLBA</span>
+          <div class="ptag">PRO</div>
+          <div class="pprice">300 Kč<span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);">/měs</span></div>
+          <div class="pdiscount"><span>🎁 Teď jen 200 Kč / první 3 měsíce</span></div>
+          <div class="pdesc">Větší rodiny — plný výkon</div>
+          <ul class="plist">
+            <li class="ok">Max. 6 členů + 2 Pozorovatelé</li>
+            <li class="ok">Vše z Basic</li>
+            <li class="ok">✨ Plný AI asistent</li>
+            <li class="ok">Export dat, prioritní podpora</li>
+          </ul>
+          <div class="pbtn-w">Vybrat Pro →</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FORMULÁŘ -->
+    <div id="planForm" style="display:none;margin-top:28px;">
+      <div class="plan-selected">
+        <div>
+          <div style="font-size:11px;color:var(--ts);font-weight:600;margin-bottom:2px;">Vybraný plán</div>
+          <div class="name" id="planNazev">—</div>
+        </div>
+        <div class="change" onclick="zmenPlan()">← Změnit plán</div>
+      </div>
+      <div class="fform">
+        <h2>Dokončit registraci</h2>
+        <p class="fdesc">Zanechte nám kontakt a budeme vás informovat o spuštění Famnio.</p>
+        <form action="https://formspree.io/f/xjgzvvoe" method="POST" id="regForm" onsubmit="handleSubmit(event)">
+          <input type="hidden" name="plan" id="planInput" value="">
+          <div class="frow">
+            <div class="fg"><label>Jméno *</label><input type="text" name="fname" placeholder="Václav" required></div>
+            <div class="fg"><label>Příjmení *</label><input type="text" name="lname" placeholder="Novák" required></div>
+          </div>
+          <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="vas@email.cz" required></div>
+          <div class="fg"><label>Telefon (nepovinné)</label><input type="tel" name="phone" placeholder="+420 123 456 789"></div>
+          <input type="hidden" name="_subject" value="Nová registrace – Famnio">
+          <div class="gdprb">
+            <div class="gc"><input type="checkbox" id="gdpr1" required><label for="gdpr1">Souhlasím se <a href="#gdpr">zpracováním osobních údajů</a> za účelem zasílání informací o spuštění Famnio. *</label></div>
+            <div class="gc"><input type="checkbox" id="gdpr2" name="newsletter"><label for="gdpr2">Souhlasím se zasíláním novinek a obchodních sdělení Famnio (nepovinné).</label></div>
+          </div>
+          <button type="submit" class="fsub" id="fsub">Registrovat se zdarma →</button>
+          <p class="pnote">🔒 Vaše data jsou v bezpečí. Nikdy je neprodáme třetím stranám.<br>Správce: Michal Machálek · famniozonestudio@seznam.cz</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- ÚSPĚCH -->
+    <div id="successBox" style="display:none;background:#E1F5EE;border-radius:var(--r);padding:40px;text-align:center;margin-top:28px;">
+      <div style="font-size:52px;margin-bottom:16px;">🎉</div>
+      <h3 style="font-family:'Fraunces',serif;font-size:26px;font-weight:900;color:#085041;margin-bottom:12px;">Jste zaregistrováni!</h3>
+      <p style="font-size:15px;color:#0F6E56;font-weight:600;line-height:1.6;">Děkujeme za registraci. Budeme vás informovat o spuštění Famnio jako jedny z prvních. Těšíme se na vás!</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- GDPR -->
+<div class="gdpr-sec" id="gdpr">
+  <div class="gdpr-content">
+    <h2>Zásady ochrany osobních údajů (GDPR)</h2>
+    <p>Poslední aktualizace: květen 2026</p>
+    <h3>1. Správce osobních údajů</h3>
+    <p>Správcem je Michal Machálek, zakladatel projektu Famnio. Kontakt: famniozonestudio@seznam.cz</p>
+    <h3>2. Jaké údaje zpracováváme</h3>
+    <p>Zpracováváme pouze údaje které nám sami poskytnete: jméno, příjmení, email a telefon (nepovinně).</p>
+    <h3>3. Účel zpracování</h3>
+    <p>Vaše údaje zpracováváme výhradně za účelem zasílání informací o spuštění aplikace Famnio a novinek o projektu.</p>
+    <h3>4. Právní základ</h3>
+    <p>Zpracování je založeno na vašem dobrovolném souhlasu dle čl. 6 odst. 1 písm. a) GDPR. Souhlas lze kdykoliv odvolat na famniozonestudio@seznam.cz</p>
+    <h3>5. Příjemci údajů</h3>
+    <p>Vaše osobní údaje nejsou prodávány ani předávány třetím stranám za komerčním účelem. Využíváme Formspree pro zpracování formulářů (formspree.io).</p>
+    <h3>6. Doba uchování</h3>
+    <p>Vaše údaje uchováváme po dobu trvání vašeho souhlasu, nejdéle 3 roky od registrace nebo do odvolání souhlasu.</p>
+    <h3>7. Vaše práva</h3>
+    <p>Máte právo na přístup ke svým údajům, jejich opravu, výmaz, omezení zpracování a přenositelnost. Máte právo kdykoliv odvolat souhlas a podat stížnost u Úřadu pro ochranu osobních údajů (uoou.cz).</p>
+    <h3>8. Kontakt</h3>
+    <p>Pro uplatnění práv kontaktujte: famniozonestudio@seznam.cz</p>
+  </div>
+</div>
+
+<footer><strong>FAMNIO</strong> &nbsp;·&nbsp; © 2026 Michal Machálek<div class="flinks"><a href="index.html">Domů</a><a href="funkce.html">Funkce</a><a href="zdravi.html">Zdraví</a><a href="faq.html">FAQ</a><a href="investori.html">Investoři</a><a href="registrace.html">Registrace</a></div></footer>
+<div class="cookie" id="cookie"><div class="cookie-text"><h4>🍪 Používáme cookies</h4><p>Pouze nezbytné cookies. Žádné sledovací ani reklamní.</p></div><div class="cookie-btns"><button class="cbtn1" onclick="hideCookie()">Odmítnout</button><button class="cbtn2" onclick="hideCookie()">Přijmout vše</button></div></div>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function hideCookie(){document.getElementById('cookie').style.display='none';}
+
+function vyberPlan(plan, el) {
+  document.querySelectorAll('.plan-card').forEach(c => {
+    c.style.transform = 'translateY(0)';
+    if(c.classList.contains('dark')){c.style.border='2px solid transparent';}
+    else{c.style.border='2px solid rgba(107,47,160,0.12)';}
+  });
+  el.style.border = '2px solid #6b2fa0';
+  el.style.transform = 'translateY(-3px)';
+  const nazvy = {
+    trial: '🆓 Zkušební verze — 21 dní zdarma',
+    basic: '📦 Basic — 150 Kč/měs první 3 měsíce, pak 200 Kč/měs',
+    pro: '⭐ Pro — 200 Kč/měs první 3 měsíce, pak 300 Kč/měs'
+  };
+  const btns = {
+    trial: 'Registrovat se zdarma →',
+    basic: 'Registrovat se — Basic →',
+    pro: 'Registrovat se — Pro →'
+  };
+  document.getElementById('planNazev').textContent = nazvy[plan];
+  document.getElementById('fsub').textContent = btns[plan];
+  document.getElementById('planInput').value = plan;
+  document.getElementById('planForm').style.display = 'block';
+  document.getElementById('planForm').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function zmenPlan() {
+  document.getElementById('planForm').style.display = 'none';
+  document.querySelectorAll('.plan-card').forEach(c => {
+    c.style.transform = 'translateY(0)';
+    if(c.classList.contains('dark')){c.style.border='2px solid transparent';}
+    else{c.style.border='2px solid rgba(107,47,160,0.12)';}
+  });
+  document.getElementById('planVyber').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('regForm');
+  try {
+    const res = await fetch(form.action, {method:'POST', body: new FormData(form), headers:{'Accept':'application/json'}});
+    if(res.ok){
+      document.getElementById('planForm').style.display = 'none';
+      document.getElementById('planVyber').style.display = 'none';
+      document.getElementById('successBox').style.display = 'block';
+      document.getElementById('successBox').scrollIntoView({behavior:'smooth'});
+    } else { form.submit(); }
+  } catch(err) { form.submit(); }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ & Ceník – Famnio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a class="nlogo" href="index.html"><div class="nicon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="7" r="3"/><path d="M6 20c0-4 2.7-7 6-7s6 3 6 7"/><path d="M3 14c0-2.5 1.5-4 3-4"/><path d="M21 14c0-2.5-1.5-4-3-4"/></svg></div>FAMNIO</a>
+  <div class="nlinks"><a href="index.html">Domů</a><a href="funkce.html">Funkce</a><a href="zdravi.html">Zdraví</a><a href="faq.html" class="active">FAQ</a><a href="investori.html">Investoři</a><a href="registrace.html" class="nav-reg">Registrovat se</a></div>
+  <a href="registrace.html" class="nbtn">Registrovat se</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Domů</a><a href="funkce.html" onclick="toggleMenu()">Funkce</a><a href="zdravi.html" onclick="toggleMenu()">Zdraví</a><a href="faq.html" onclick="toggleMenu()">FAQ</a><a href="investori.html" onclick="toggleMenu()">Investoři</a><a href="registrace.html" onclick="toggleMenu()" class="nav-reg">Registrovat se →</a>
+</div>
+<div class="phero"><h1>FAQ & Ceník</h1><p>Nenašli jste odpověď? Napište nám na famniozonestudio@seznam.cz</p></div>
+
+<div class="sec">
+  <div class="in">
+
+    <!-- CENÍK -->
+    <div class="faq-sec">
+      <div class="faq-lbl">Ceník</div>
+      <div class="earlybird">
+        <div class="earlybird-icon">🎁</div>
+        <div><h4>Předregistrační nabídka</h4><p>Zaregistrujte se teď a získejte <strong>předběžný přístup jako první</strong> + <strong>slevu na první 3 měsíce</strong> — Basic za 150 Kč/měs a Pro za 200 Kč/měs.</p></div>
+      </div>
+      <div class="plan-grid">
+        <!-- Trial -->
+        <div class="plan-card" style="cursor:default;">
+          <div class="ptag">ZKUŠEBNÍ VERZE</div>
+          <div class="pprice">Zdarma</div>
+          <div class="pdesc">21 dní, žádná karta</div>
+          <ul class="plist">
+            <li class="ok">Všechny funkce odemčeny</li>
+            <li class="ok">AI asistent plně dostupný</li>
+            <li class="ok">Max. 2 členové domácnosti</li>
+            <li class="ok">Žádná platební karta</li>
+          </ul>
+          <a href="registrace.html" class="pbtn-t" style="display:block;text-decoration:none;">Začít zdarma →</a>
+        </div>
+        <!-- Basic -->
+        <div class="plan-card" style="cursor:default;">
+          <div class="ptag">BASIC</div>
+          <div class="pprice">200 Kč<span style="font-size:13px;font-weight:600;color:var(--ts);">/měs</span></div>
+          <div class="pdiscount"><span>🎁 Teď jen 150 Kč / první 3 měsíce</span></div>
+          <div class="pdesc">Páry a menší domácnosti</div>
+          <ul class="plist">
+            <li class="ok">Max. 4 členové domácnosti</li>
+            <li class="ok">Kalendář, úkoly, jídelníček</li>
+            <li class="ok">Nákupy + Rohlík & Košík.cz</li>
+            <li class="ok">Zdraví a prevence</li>
+            <li class="ok">Push notifikace</li>
+            <li class="no">AI asistent</li>
+          </ul>
+          <a href="registrace.html" class="pbtn-p" style="display:block;text-decoration:none;">Vybrat Basic →</a>
+        </div>
+        <!-- Pro -->
+        <div class="plan-card dark" style="cursor:default;position:relative;">
+          <span class="pbest">NEJLEPŠÍ VOLBA</span>
+          <div class="ptag">PRO</div>
+          <div class="pprice">300 Kč<span style="font-size:13px;font-weight:600;color:rgba(255,255,255,0.6);">/měs</span></div>
+          <div class="pdiscount"><span>🎁 Teď jen 200 Kč / první 3 měsíce</span></div>
+          <div class="pdesc">Větší rodiny — plný výkon</div>
+          <ul class="plist">
+            <li class="ok">Max. 6 členů domácnosti</li>
+            <li class="ok">2 Pozorovatelé (prarodiče, chůva)</li>
+            <li class="ok">Vše z Basic</li>
+            <li class="ok">✨ Plný AI asistent + web search</li>
+            <li class="ok">Prioritní zákaznická podpora</li>
+            <li class="ok">Pokročilá gamifikace a odznaky</li>
+            <li class="ok">Export dat (PDF, CSV)</li>
+            <li class="ok">První přístup k novým funkcím</li>
+          </ul>
+          <a href="registrace.html" class="pbtn-w" style="display:block;text-decoration:none;">Vybrat Pro →</a>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:var(--r);padding:20px 24px;border:1px solid var(--b);margin-top:4px;text-align:center;">
+        <div style="font-size:14px;font-weight:800;color:var(--t);margin-bottom:8px;">💡 Co je Pozorovatel?</div>
+        <p style="font-size:13px;color:var(--ts);font-weight:600;line-height:1.6;max-width:520px;margin:0 auto;">Pozorovatel je člen mimo vaši domácnost — prarodič, chůva nebo blízký přítel. Vidí kalendář a úkoly, může dostávat notifikace, ale nemá plný přístup k nastavení. Ideální pro sdílení s babičkou. 😊</p>
+      </div>
+    </div>
+
+    <!-- OBECNÉ -->
+    <div class="faq-sec">
+      <div class="faq-lbl">Obecné</div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Kdy bude Famnio k dispozici?<span class="plus">+</span></div><div class="faq-a"><p>Famnio se aktivně vyvíjí. Registrujte se nyní a budete informováni jako první. Plánujeme spustit beta verzi do 6 měsíců od zahájení vývoje.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Na jakých zařízeních bude fungovat?<span class="plus">+</span></div><div class="faq-a"><p>Famnio bude dostupné jako mobilní aplikace pro Android i iOS. Web verze je v plánu v pozdější fázi.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Mohu pozvat partnera nebo prarodiče?<span class="plus">+</span></div><div class="faq-a"><p>Ano! Basic umožňuje až 4 členy domácnosti. Pro plán nabízí až 6 členů plus 2 Pozorovatele — ti vidí kalendář a úkoly ale nemají plný přístup. Ideální pro babičky a chůvy.</p></div></div>
+    </div>
+
+    <!-- CENÍK FAQ -->
+    <div class="faq-sec">
+      <div class="faq-lbl">Ceník a platby</div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Co je předregistrační sleva?<span class="plus">+</span></div><div class="faq-a"><p>Pokud se zaregistrujete ještě před spuštěním Famnio, získáte předběžný přístup jako jedni z prvních a slevu na první 3 měsíce — Basic za 150 Kč/měs (normálně 200 Kč) a Pro za 200 Kč/měs (normálně 300 Kč). Sleva se uplatní automaticky při aktivaci účtu.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Jaký je rozdíl mezi Basic a Pro?<span class="plus">+</span></div><div class="faq-a"><p>Basic je pro páry a menší domácnosti — max. 4 členové, všechny moduly, Rohlík & Košík.cz, bez AI asistenta (200 Kč/měs). Pro navíc přidává AI asistenta, max. 6 členů + 2 Pozorovatele, prioritní podporu a export dat (300 Kč/měs).</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Co se stane po 21denní zkušební verzi?<span class="plus">+</span></div><div class="faq-a"><p>Po 21 dnech si vyberete plán Basic nebo Pro. Pokud si plán nevyberete, vaše data bezpečně uchováme po dobu 30 dní. Platební karta není potřeba při registraci.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Mohu kdykoliv zrušit předplatné?<span class="plus">+</span></div><div class="faq-a"><p>Ano, předplatné můžete zrušit kdykoliv bez poplatků. Po zrušení budete moci aplikaci používat do konce zaplaceného období.</p></div></div>
+    </div>
+
+    <!-- FUNKCE -->
+    <div class="faq-sec">
+      <div class="faq-lbl">Funkce</div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Jak funguje AI asistent?<span class="plus">+</span></div><div class="faq-a"><p>AI asistent je dostupný v plánu Pro a během 21denní zkušební verze. Navrhuje jídelníček dle preferencí a alergií, plánuje úkoly a hledá aktuální informace. Vždy navrhuje — vy potvrzujete.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Jak funguje propojení s Rohlíkem a Košíkem?<span class="plus">+</span></div><div class="faq-a"><p>Famnio automaticky vygeneruje nákupní seznam z jídelníčku. Jedním kliknutím ho odešlete přímo do Rohlíku nebo Košíku.cz. Dostupné v obou plánech.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Co když mám alergii nebo speciální dietu?<span class="plus">+</span></div><div class="faq-a"><p>Při nastavení profilu zadáte alergie, disliky a oblíbená jídla. AI asistent tyto informace vždy respektuje. Podporujeme vegetariánství, veganství, laktózovou intoleranci a další.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Jak funguje gamifikace?<span class="plus">+</span></div><div class="faq-a"><p>Za splněné úkoly dostávají členové body. Snadný = 10 bodů, střední = 20, těžký = 50, výzva = 100. Body se hromadí do levelů. Na dashboardu je žebříček celé domácnosti. 😄</p></div></div>
+    </div>
+
+    <!-- GDPR -->
+    <div class="faq-sec">
+      <div class="faq-lbl">Soukromí a GDPR</div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Jsou moje data v bezpečí?<span class="plus">+</span></div><div class="faq-a"><p>Ano. Vaše data jsou šifrovaná a uložená v Firebase (Google Cloud). Nikdy neprodáváme ani nesdílíme vaše osobní údaje s třetími stranami za komerčním účelem.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Jaké údaje o mně sbíráte?<span class="plus">+</span></div><div class="faq-a"><p>Sbíráme pouze data která nám sami poskytnete: jméno, email, telefon (nepovinně) a data zadaná do aplikace. Žádné sledování polohy ani reklamní profily.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Mohu svůj souhlas odvolat?<span class="plus">+</span></div><div class="faq-a"><p>Ano, kdykoliv. Napište nám na famniozonestudio@seznam.cz a vaše data do 30 dní smažeme. Máte právo na přístup, opravu i výmaz dle GDPR.</p></div></div>
+      <div class="faq-item"><div class="faq-q" onclick="tog(this)">Sdílíte moje data s třetími stranami?<span class="plus">+</span></div><div class="faq-a"><p>Ne. Využíváme Firebase (Google) pro databázi a Formspree pro registrační formulář — oba splňují GDPR. Data nesdílíme za komerčním účelem.</p></div></div>
+    </div>
+
+    <div style="background:var(--bg2);border-radius:var(--r);padding:22px;text-align:center;border:1px solid var(--b);">
+      <div style="font-size:15px;font-weight:800;color:var(--t);margin-bottom:8px;">Nenašli jste odpověď?</div>
+      <p style="font-size:13px;color:var(--ts);font-weight:600;margin-bottom:14px;">Napište nám a odpovíme do 24 hodin.</p>
+      <a href="mailto:famniozonestudio@seznam.cz" style="background:linear-gradient(135deg,#2d1b8e,#6b2fa0);color:#fff;padding:11px 22px;border-radius:10px;font-size:13px;font-weight:800;text-decoration:none;display:inline-block;">✉️ Napsat nám</a>
+    </div>
+  </div>
+</div>
+
+<div class="cta"><h2>Připojte se jako první</h2><p>21 dní zdarma + předregistrační sleva. Žádná platební karta.</p><a href="registrace.html" class="bp">Registrovat se zdarma</a></div>
+<footer><strong>FAMNIO</strong> &nbsp;·&nbsp; © 2026 Michal Machálek<div class="flinks"><a href="index.html">Domů</a><a href="funkce.html">Funkce</a><a href="zdravi.html">Zdraví</a><a href="faq.html">FAQ</a><a href="investori.html">Investoři</a><a href="registrace.html">Registrace</a></div></footer>
+<div class="cookie" id="cookie"><div class="cookie-text"><h4>🍪 Používáme cookies</h4><p>Pouze nezbytné cookies. Žádné sledovací ani reklamní.</p></div><div class="cookie-btns"><button class="cbtn1" onclick="hideCookie()">Odmítnout</button><button class="cbtn2" onclick="hideCookie()">Přijmout vše</button></div></div>
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function hideCookie(){document.getElementById('cookie').style.display='none';}
+function tog(el){const a=el.nextElementSibling;const plus=el.querySelector('.plus');if(a.style.display==='block'){a.style.display='none';plus.style.transform='rotate(0)';}else{a.style.display='block';plus.style.transform='rotate(45deg)';}}
+</script>
+</body>
+</html>

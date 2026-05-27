@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro investory – Famnio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a class="nlogo" href="index.html"><div class="nicon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="7" r="3"/><path d="M6 20c0-4 2.7-7 6-7s6 3 6 7"/><path d="M3 14c0-2.5 1.5-4 3-4"/><path d="M21 14c0-2.5-1.5-4-3-4"/></svg></div>FAMNIO</a>
+  <div class="nlinks"><a href="index.html">Domů</a><a href="funkce.html">Funkce</a><a href="zdravi.html">Zdraví</a><a href="faq.html">FAQ</a><a href="investori.html" class="active">Investoři</a><a href="registrace.html" class="nav-reg">Registrovat se</a></div>
+  <a href="registrace.html" class="nbtn">Registrovat se</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Domů</a><a href="funkce.html" onclick="toggleMenu()">Funkce</a><a href="zdravi.html" onclick="toggleMenu()">Zdraví</a><a href="faq.html" onclick="toggleMenu()">FAQ</a><a href="investori.html" onclick="toggleMenu()">Investoři</a><a href="registrace.html" onclick="toggleMenu()" class="nav-reg">Registrovat se →</a>
+</div>
+<div class="phero"><h1>Pojďme společně změnit to, jak domácnosti fungují.</h1><p>Famnio je ekosystém, ne jen appka. Hledáme investora který věří v sílu jednoduchých řešení.</p></div>
+
+<div class="sec">
+  <div class="in">
+    <div class="lbl">Investiční příležitost</div>
+    <h2 class="h2">Klíčová čísla</h2>
+    <div class="igrid">
+      <div class="ibox"><div class="inum">4 mil. Kč</div><div class="ilbl">Hledaná investice</div></div>
+      <div class="ibox"><div class="inum">20–25 %</div><div class="ilbl">Equity nebo 30 % ze zisku</div></div>
+      <div class="ibox"><div class="inum">2× / 3 roky</div><div class="ilbl">Cíl návratnosti</div></div>
+      <div class="ibox"><div class="inum">850 000</div><div class="ilbl">Domácností s dětmi v ČR</div></div>
+      <div class="ibox"><div class="inum">2,5 mld. Kč</div><div class="ilbl">Potenciál při 10% penetraci</div></div>
+      <div class="ibox"><div class="inum">2–3×</div><div class="ilbl">Virální koeficient</div></div>
+    </div>
+
+    <div class="icard">
+      <h3>💼 Byznys model</h3>
+      <ul>
+        <li>21 dní zkušební verze zdarma — žádná platební karta</li>
+        <li>Basic 200 Kč/měs (max. 4 členové, bez AI)</li>
+        <li>Pro 300 Kč/měs (max. 6 členů + 2 Pozorovatelé, plný AI)</li>
+        <li>B2B: jednáme o spolupráci s pojišťovnami</li>
+        <li>1 uživatel = průměrně 2–3 noví organicky</li>
+      </ul>
+    </div>
+
+    <div class="icard">
+      <h3>🏆 Proč Famnio vítězí nad konkurencí</h3>
+      <ul>
+        <li>Google Family, Cozi, OurHome — žádný nemá kompletní ekosystém</li>
+        <li>AI asistent v češtině — nikde jinde</li>
+        <li>Přímá integrace Rohlík & Košík.cz</li>
+        <li>Modul zdraví a prevence</li>
+        <li>Přizpůsobeno českému trhu</li>
+      </ul>
+    </div>
+
+    <div class="hlbox"><p>"Vize, která není o mně — ale o stovkách domácností, kterým můžeme společně zlepšit život. A v tom je síla, kterou neskrývám — ale nabízím."</p></div>
+  </div>
+</div>
+
+<div class="sec2">
+  <div class="in">
+    <div class="lbl">Roadmapa & Rozpočet</div>
+    <h2 class="h2">MVP za 3–6 měsíců</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1–2</div><div class="step-content"><h3>Měsíc 1–2: Design & vývoj</h3><p>UX/UI design, Flutter vývoj, Firebase integrace, AI asistent v češtině</p></div></div>
+      <div class="step"><div class="step-num">3–4</div><div class="step-content"><h3>Měsíc 3–4: Beta testování</h3><p>Testování s prvními uživateli, ladění, integrace Rohlík & Košík.cz</p></div></div>
+      <div class="step"><div class="step-num">5–6</div><div class="step-content"><h3>Měsíc 5–6: Launch & marketing</h3><p>Spuštění na App Store a Google Play, marketingová kampaň, partnerství s pojišťovnami</p></div></div>
+    </div>
+    <h3 style="font-size:18px;font-weight:800;color:var(--t);margin:28px 0 14px;">Rozpočet investice</h3>
+    <table class="btable">
+      <tr><td>Vývoj aplikace</td><td>1 500 000 Kč</td></tr>
+      <tr><td>UX/UI design & testování</td><td>500 000 Kč</td></tr>
+      <tr><td>Právní služby</td><td>300 000 Kč</td></tr>
+      <tr><td>Marketing & uvedení na trh</td><td>700 000 Kč</td></tr>
+      <tr><td>Rezervy & provoz</td><td>1 000 000 Kč</td></tr>
+      <tr><td><strong>CELKEM</strong></td><td><strong>4 000 000 Kč</strong></td></tr>
+    </table>
+    <div style="margin-top:28px;">
+      <p style="font-size:15px;font-weight:700;color:var(--t);margin-bottom:16px;">Chcete vědět více? Stáhněte si Pitch Deck a zjistěte proč Famnio stojí za vaši pozornost.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="Famnio_PitchDeck.pptx" download style="background:linear-gradient(135deg,#2d1b8e,#6b2fa0);color:#fff;padding:13px 22px;border-radius:10px;font-size:14px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">📥 Stáhnout Pitch Deck</a>
+        <a href="mailto:famniozonestudio@seznam.cz" style="background:#fff;color:var(--p);border:2px solid var(--p);padding:11px 22px;border-radius:10px;font-size:14px;font-weight:800;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">✉️ Napsat zakladateli</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="in">
+    <div class="lbl">Kontakt</div>
+    <h2 class="h2">Napište nám</h2>
+    <p style="font-size:15px;color:var(--ts);line-height:1.8;margin-bottom:24px;font-weight:600;">Máte zájem o investici nebo partnerství? Napište nám a domluvíme schůzku.</p>
+    <div class="fform">
+      <h2>Kontaktní formulář</h2>
+      <p class="fdesc">Odpovíme do 24 hodin.</p>
+      <form action="https://formspree.io/f/xjgzvvoe" method="POST">
+        <div class="frow">
+          <div class="fg"><label>Jméno a příjmení *</label><input type="text" name="name" placeholder="Jan Novák" required></div>
+          <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="jan@firma.cz" required></div>
+        </div>
+        <div class="fg"><label>Společnost / fond</label><input type="text" name="company" placeholder="Název společnosti (nepovinné)"></div>
+        <div class="fg"><label>Uvažovaná výše investice</label><input type="text" name="amount" placeholder="např. 4 000 000 Kč (nepovinné)"></div>
+        <div class="fg"><label>Zpráva</label><input type="text" name="message" placeholder="Váš vzkaz..."></div>
+        <input type="hidden" name="_subject" value="Zájem investora – Famnio">
+        <button type="submit" class="fsub">Odeslat zprávu →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer><strong>FAMNIO</strong> &nbsp;·&nbsp; © 2026 Michal Machálek<div class="flinks"><a href="index.html">Domů</a><a href="funkce.html">Funkce</a><a href="zdravi.html">Zdraví</a><a href="faq.html">FAQ</a><a href="investori.html">Investoři</a><a href="registrace.html">Registrace</a></div></footer>
+<div class="cookie" id="cookie"><div class="cookie-text"><h4>🍪 Používáme cookies</h4><p>Pouze nezbytné cookies. Žádné sledovací ani reklamní.</p></div><div class="cookie-btns"><button class="cbtn1" onclick="hideCookie()">Odmítnout</button><button class="cbtn2" onclick="hideCookie()">Přijmout vše</button></div></div>
+<script>function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}function hideCookie(){document.getElementById('cookie').style.display='none';}</script>
+</body>
+</html>

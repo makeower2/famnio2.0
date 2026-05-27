@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Famnio – Asistent pro váš domov</title>
+<meta name="description" content="Famnio je asistent pro váš domov. Kalendář, úkoly, jídelníček, nákupy a zdraví na jednom místě.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <a class="nlogo" href="index.html"><div class="nicon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="7" r="3"/><path d="M6 20c0-4 2.7-7 6-7s6 3 6 7"/><path d="M3 14c0-2.5 1.5-4 3-4"/><path d="M21 14c0-2.5-1.5-4-3-4"/></svg></div>FAMNIO</a>
+  <div class="nlinks">
+    <a href="funkce.html">Funkce</a>
+    <a href="zdravi.html">Zdraví & Výzkumy</a>
+    <a href="faq.html">FAQ</a>
+    <a href="investori.html">Pro investory</a>
+    <a href="registrace.html" class="nav-reg">Registrovat se</a>
+  </div>
+  <a href="registrace.html" class="nbtn">Registrovat se</a>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="funkce.html" onclick="toggleMenu()">Funkce</a>
+  <a href="zdravi.html" onclick="toggleMenu()">Zdraví & Výzkumy</a>
+  <a href="faq.html" onclick="toggleMenu()">FAQ</a>
+  <a href="investori.html" onclick="toggleMenu()">Pro investory</a>
+  <a href="registrace.html" onclick="toggleMenu()" class="nav-reg">Registrovat se →</a>
+</div>
+
+<div class="hero">
+  <span class="hbadge">Asistent pro váš domov</span>
+  <h1>Domov by měl být <span>útočiště.</span> Ne každodenní boj.</h1>
+  <p>Famnio vzniká proto, abyste trávili méně času organizací a více času tím, na čem skutečně záleží.</p>
+  <div class="hbtns">
+    <a href="registrace.html" class="bp">Registrovat se zdarma</a>
+    <a href="funkce.html" class="bs">Zjistit více</a>
+  </div>
+</div>
+
+<div class="sec">
+  <div class="in">
+    <div class="lbl">Proč Famnio vzniká</div>
+    <h2 class="h2">Začalo to rozpisem služeb na dveřích.</h2>
+    <div class="stxt">
+      <p>Když jsem byl malý, viselo nám doma na dveřích plánování služeb. Kdo umyje nádobí, kdo vysype koš, kdo uklidí. Nechápal jsem to. Přišlo mi to jako zbytečná byrokracie.</p>
+      <p>Ale pak jsem vyrostl. A najednou jsem pochopil, proč ten rozpis existoval.</p>
+      <p><strong>Domácnost prostě nefunguje sama od sebe.</strong></p>
+      <p>Jenže problém není jen o povinnostech. To by bylo jednoduché. Problém je v tom, kolik věcí musíte mít najednou v hlavě. Co uvařit k obědu, když nevíte co je v ledničce. Jak naplánovat výlet, když nevíte co mají děti příští týden. Jak nekupovat potřetí hořčici, protože jste zapomněli že ji máte. Jak nezapomenout na prohlídku u zubaře, objednanou před třemi měsíci.</p>
+      <p>A k tomu ještě práce. Termíny. Schůzky. Únava.</p>
+      <p>Přijdete domů a místo odpočinku řešíte co je k večeři. Místo přítomnosti jste v hlavě pořád někde jinde.</p>
+      <div class="qblock"><p>"Domov by měl být útočiště. Místo kde se dobijete. Místo toho je to pro mnoho z nás další zdroj stresu — jen v jiném prostředí než v práci."</p></div>
+      <p>Mluvil jsem s desítkami lidí. Stejný příběh dokola. Každý bojuje se stejnými věcmi. Každý si myslí že je to jeho osobní selhání. Ale není. Je to systémový problém, který nikdo pořádně nevyřešil.</p>
+      <p>Proto Famnio vzniká. Ne jako další todo appka. Ale jako skutečný asistent pro váš domov — který šetří čas, stres a peníze. Ať jste pár, rodina s dětmi, nebo prostě chcete mít doma klid a pořádek.</p>
+      <p><strong>Protože čas strávený doma v klidu není luxus. Je to to nejdůležitější co máme.</strong></p>
+      <p class="author">— Michal Machálek, zakladatel Famnio</p>
+    </div>
+  </div>
+</div>
+
+<div class="sec2">
+  <h2 class="h2c">Co v Famnio najdete</h2>
+  <p class="sub">Klikněte na sekci která vás zajímá</p>
+  <div class="cgrid">
+    <a href="funkce.html" class="ccard"><div class="cicon">📱</div><h3>Funkce appky</h3><p>Kalendář, úkoly, jídelníček, nákupy a zdraví. AI asistent. Rohlík & Košík.cz.</p><span class="clink">Zobrazit funkce →</span></a>
+    <a href="zdravi.html" class="ccard"><div class="cicon">🧠</div><h3>Zdraví & Výzkumy</h3><p>Data z ČSÚ, NUDZ a WHO o stresu v domácnosti. Kalkulačka úspor.</p><span class="clink">Číst výzkumy →</span></a>
+    <a href="faq.html" class="ccard"><div class="cicon">❓</div><h3>FAQ & Ceník</h3><p>21 dní zdarma, Basic 200 Kč, Pro 300 Kč. Odpovědi na časté otázky.</p><span class="clink">Zobrazit FAQ →</span></a>
+    <a href="investori.html" class="ccard"><div class="cicon">💼</div><h3>Pro investory</h3><p>4 mil. Kč za 20–25 % equity nebo 30 % ze zisku. Pitch Deck ke stažení.</p><span class="clink">Více pro investory →</span></a>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>Připojte se jako první</h2>
+  <p>Zaregistrujte se teď a získejte <strong>předběžný přístup + slevu na první 3 měsíce.</strong></p>
+  <a href="registrace.html" class="bp">Registrovat se zdarma</a>
+</div>
+
+<footer>
+  <strong>FAMNIO</strong> &nbsp;·&nbsp; Svět zítřka přinášíme už dnes &nbsp;·&nbsp; © 2026 Michal Machálek<br>
+  <div class="flinks">
+    <a href="index.html">Domů</a><a href="funkce.html">Funkce</a><a href="zdravi.html">Zdraví</a><a href="faq.html">FAQ</a><a href="investori.html">Investoři</a><a href="registrace.html">Registrace</a>
+  </div>
+</footer>
+
+<div class="cookie" id="cookie">
+  <div class="cookie-text"><h4>🍪 Používáme cookies</h4><p>Pouze nezbytné cookies pro fungování webu. Žádné sledovací ani reklamní cookies.</p></div>
+  <div class="cookie-btns"><button class="cbtn1" onclick="hideCookie()">Odmítnout</button><button class="cbtn2" onclick="hideCookie()">Přijmout vše</button></div>
+</div>
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function hideCookie(){document.getElementById('cookie').style.display='none';}
+</script>
+</body>
+</html>
